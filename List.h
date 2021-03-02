@@ -333,17 +333,17 @@ public:
         // create list for holding reverse
         List<data_type> reverse;
 
-        // loop for the length of the list
+        // to store reverse of current list in reverse list
         for (int i = 0; i < list_size; i++)
         {
-            // push the back of the list into the front of reverse
+            // push back the reverse list with the back of the current list
             reverse.push_back(pop_back());
         }
 
-        // loop for the length of the list
+        // to store reverse list inside current list
         for (int i = 0; i < list_size; i++)
         {
-            // push the back of the list into the front of reverse
+            // push back the current list with the front of the reverse list
             push_back(reverse.pop_front());
         }
     }
