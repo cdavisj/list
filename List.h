@@ -55,7 +55,7 @@ public:
     */
 
     // check if list is empty
-    bool is_empty()
+    bool empty()
     {
         if (head == nullptr)
         {
@@ -70,7 +70,7 @@ public:
     // number of items in list
     int size()
     {
-        if (is_empty())
+        if (empty())
         {
             return 0;
         }
@@ -99,6 +99,24 @@ public:
 
     /*
     *   ---------------------------------------------
+    *   |              ELEMENT ACCESS               |
+    *   ---------------------------------------------
+    */
+
+    // return reference item at front of list
+    data_type& front()
+    {
+        return head->data;
+    }
+
+    // return reference to item at back of list
+    data_type& back()
+    {
+        return tail->data;
+    }
+
+    /*
+    *   ---------------------------------------------
     *   |                 MODIFIERS                 |
     *   ---------------------------------------------
     */
@@ -115,7 +133,7 @@ public:
         // make next nullptr, since node will be new tail
         curr->next = nullptr;
 
-        if (is_empty()) // first node
+        if (empty()) // first node
         {
             // make head and tail point to new node
             head = tail = curr;
@@ -146,7 +164,7 @@ public:
         // make prev nullptr, since node will be new head
         curr->prev = nullptr;
 
-        if (is_empty()) // first node
+        if (empty()) // first node
         {
             // make head and tail point to new node
             head = tail = curr;
@@ -168,7 +186,7 @@ public:
     // pop item from back of list
     data_type pop_back()
     {
-        if (is_empty())
+        if (empty())
         {
             // print error message
             std::cout << "Error: Cannot pop_back. List is empty.\n";
@@ -215,7 +233,7 @@ public:
     // pop item from front of list
     data_type pop_front()
     {
-        if (is_empty())
+        if (empty())
         {
             // print error message
             std::cout << "Error: Cannot pop_front. List is empty.\n";
@@ -262,7 +280,7 @@ public:
     // clear the list
     void clear()
     {
-        if (is_empty())
+        if (empty())
         {
             return;
         }
@@ -357,7 +375,7 @@ public:
     // print list going forwards
     void print()
     {
-        if (is_empty())
+        if (empty())
         {
             // print error message
             std::cout << "Error: Cannot print list. List is empty.\n";
@@ -387,7 +405,7 @@ public:
     // print list going backwards
     void print_reverse()
     {
-        if (is_empty())
+        if (empty())
         {
             // print error message
             std::cout << "Error: Cannot print list. List is empty.\n";

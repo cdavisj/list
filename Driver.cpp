@@ -34,6 +34,11 @@ int main()
     list.reverse();
     list.print();
 
+    int& head = list.front();
+    std::cout << "\nFront of list: " << head << std::endl;
+
+    int& tail = list.back();
+    std::cout << "\nBack of list: " << tail << std::endl;
 
     std::cin.get();
     return 0;
