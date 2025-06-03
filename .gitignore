@@ -1,0 +1,6 @@
+*
+!lib/catch.hpp
+!tests/test_list.cpp
+!list.h
+!Makefile
+!README.md
